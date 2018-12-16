@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentProperties DeviceType="Desktop">
+  <Component type="ScriptPanel" id="pnlMain" x="-1" y="3" width="768" height="1024"
+             itemColour="0" itemColour2="0" textColour="0" bgColour="0" borderRadius="0"
+             borderSize="0">
+    <Component type="ScriptPanel" id="pnlADSR" x="366" y="641" width="354" height="228"
+               parentComponent="pnlMain" itemColour="0" itemColour2="0" borderSize="0"
+               borderRadius="0">
+      <Component type="ScriptButton" id="btnADSR0" x="50" y="55" parentComponent="pnlADSR"
+                 text="All" width="50" height="26" radioGroup="1"/>
+      <Component type="ScriptButton" id="btnADSR1" x="110" y="55" parentComponent="pnlADSR"
+                 text="1" width="50" height="26" radioGroup="1"/>
+      <Component type="ScriptButton" id="btnADSR2" x="170" y="55" parentComponent="pnlADSR"
+                 text="2" width="50" height="26" radioGroup="1"/>
+      <Component type="ScriptButton" id="btnADSR3" x="230" y="55" parentComponent="pnlADSR"
+                 text="3" width="50" height="26" radioGroup="1"/>
+      <Component type="ScriptSlider" id="sliADSR0" x="56" y="97" parentComponent="pnlADSR"
+                 style="Vertical" width="30" height="100" mode="Time" max="20000"
+                 stepSize="0.1" suffix=" ms" middlePosition="5000"/>
+      <Component type="ScriptSlider" id="sliADSR1" x="121" y="97" parentComponent="pnlADSR"
+                 style="Vertical" width="30" height="100" mode="Time" max="20000"
+                 stepSize="0.1" suffix=" ms" middlePosition="5000"/>
+      <Component type="ScriptSlider" id="sliADSR2" x="186" y="97" parentComponent="pnlADSR"
+                 style="Vertical" width="30" height="100" mode="Decibel" max="0"
+                 stepSize="1" suffix=" ms" middlePosition="-18" min="-100"/>
+      <Component type="ScriptSlider" id="sliADSR3" x="246" y="97" parentComponent="pnlADSR"
+                 style="Vertical" width="30" height="100" mode="Time" max="20000"
+                 stepSize="0.1" suffix=" ms" middlePosition="5000"/>
+    </Component>
+    <Component type="ScriptPanel" id="pnlFilter" x="1" y="648" width="399" height="213"
+               parentComponent="pnlMain" itemColour="0" itemColour2="0" borderSize="0"
+               borderRadius="0">
+      <Component type="ScriptSlider" id="sliHPF" x="55" y="93" parentComponent="pnlFilter"
+                 style="Vertical" width="30" height="100" mode="Frequency" max="20000"
+                 stepSize="1" suffix=" Hz" middlePosition="1500" processorId="AHDSR Envelope1"
+                 parameterId="Attack" min="20"/>
+      <Component type="ScriptSlider" id="sliLPF" x="116" y="93" parentComponent="pnlFilter"
+                 style="Vertical" width="30" height="100" mode="Frequency" max="20000"
+                 stepSize="1" suffix=" Hz" middlePosition="1500" min="20"/>
+      <Component type="ScriptSlider" id="sliRes" x="177" y="93" parentComponent="pnlFilter"
+                 style="Vertical" width="30" height="100" middlePosition="1" min="0.30000001"
+                 max="8"/>
+      <Component type="ScriptButton" id="btnFilter0" x="40" y="38" parentComponent="pnlFilter"
+                 text="All" width="50" height="26" radioGroup="2"/>
+      <Component type="ScriptButton" id="btnFilter1" x="100" y="38" parentComponent="pnlFilter"
+                 text="1" width="50" height="26" radioGroup="2"/>
+      <Component type="ScriptButton" id="btnFilter2" x="160" y="38" parentComponent="pnlFilter"
+                 text="2" width="50" height="26" radioGroup="2"/>
+      <Component type="ScriptButton" id="btnFilter3" x="220" y="38" parentComponent="pnlFilter"
+                 text="3" width="50" height="26" radioGroup="2"/>
+      <Component type="ScriptSlider" id="sliFilterA" x="237" y="83" parentComponent="pnlFilter"
+                 width="54" height="47" mode="Time" max="20000" stepSize="1" suffix=" ms"
+                 middlePosition="1000"/>
+      <Component type="ScriptSlider" id="sliFilterD" x="240" y="136" parentComponent="pnlFilter"
+                 width="59" height="48" mode="Time" max="20000" stepSize="1" suffix=" ms"
+                 middlePosition="1000"/>
+      <Component type="ScriptSlider" id="sliFilterS" x="305" y="87" parentComponent="pnlFilter"
+                 width="63" height="46" mode="Time" max="20000" stepSize="1" suffix=" ms"
+                 middlePosition="1000"/>
+      <Component type="ScriptSlider" id="sliFilterR" x="314" y="135" parentComponent="pnlFilter"
+                 width="63" height="49" mode="Time" max="20000" stepSize="1" suffix=" ms"
+                 middlePosition="1000"/>
+    </Component>
+    <Component type="ScriptPanel" id="pnlEFX" x="40" y="480" width="311" height="182"
+               parentComponent="pnlMain">
+      <Component type="ScriptSlider" id="Knob1" x="97" y="34" parentComponent="pnlEFX"
+                 style="Horizontal" width="100" height="30" mode="Frequency" min="20"
+                 max="20000" stepSize="1" suffix=" Hz" middlePosition="1500"/>
+      <Component type="ScriptButton" id="btnChorus0" x="23" y="79" parentComponent="pnlEFX"
+                 processorId="Chorus1" parameterId="Enabled"/>
+      <Component type="ScriptButton" id="btnChorus1" x="166" y="79" parentComponent="pnlEFX"
+                 processorId="Chorus2" parameterId="Enabled"/>
+      <Component type="ScriptSlider" id="knbReverb" x="9" y="118" parentComponent="pnlEFX"
+                 processorId="Simple Reverb1" parameterId="WetLevel" mode="NormalizedPercentage"
+                 suffix="%" middlePosition="0.5"/>
+      <Component type="ScriptSlider" id="knbDelay" x="168" y="118" parentComponent="pnlEFX"/>
+    </Component>
+    <Component type="ScriptPanel" id="pnlMaster" x="620" y="467" width="149"
+               height="228" parentComponent="pnlMain">
+      <Component type="ScriptSlider" id="sliMasterVol" x="56" y="18" parentComponent="pnlMaster"
+                 mode="Decibel" min="-100" max="0" stepSize="0.1" suffix=" dB"
+                 middlePosition="-18" style="Vertical" width="30" height="100"
+                 processorId="Simple Gain1" parameterId="Gain"/>
+      <Component type="ScriptButton" id="btnPoly" x="13" y="138" parentComponent="pnlMaster"
+                 radioGroup="3"/>
+      <Component type="ScriptButton" id="btnMono" x="13" y="178" parentComponent="pnlMaster"
+                 radioGroup="3"/>
+    </Component>
+    <Component type="ScriptPanel" id="pnlOSC3" x="36" y="335" width="727" height="134"
+               parentComponent="pnlMain">
+      <Component type="ScriptButton" id="btnOsc3" x="259" y="25" parentComponent="pnlOSC3"
+                 processorId="Osc3" parameterId="Enabled"/>
+      <Component type="ScriptSlider" id="sliOscType" x="14" y="69" width="147"
+                 height="48" parentComponent="pnlOSC3" max="9" stepSize="1" processorId="Osc3"
+                 parameterId="WaveForm1" min="1"/>
+      <Component type="ScriptSlider" id="sliMod" x="177" y="69" width="147" height="48"
+                 parentComponent="pnlOSC3" processorId="Osc3" parameterId="PulseWidth1"
+                 defaultValue="0.5" mode="NormalizedPercentage" suffix="%" middlePosition="0.5"/>
+      <Component type="ScriptSlider" id="sliSemiTone" x="340" y="69" width="147"
+                 height="48" parentComponent="pnlOSC3" processorId="osc3Transposer"
+                 parameterId="TransposeAmount" min="-24" max="24" middlePosition="0"
+                 stepSize="1"/>
+      <Component type="ScriptSlider" id="sliFineTune" x="504" y="69" width="147"
+                 height="48" parentComponent="pnlOSC3" processorId="Osc3" parameterId="Detune1"
+                 max="100" middlePosition="0" min="-100"/>
+      <Component type="ScriptSlider" id="sliOscVol" x="671" y="22" width="30"
+                 height="100" parentComponent="pnlOSC3" style="Vertical" mode="Decibel"
+                 min="-100" max="0" stepSize="0.1" suffix=" dB" middlePosition="-18"
+                 processorId="osc3SimpleGain" parameterId="Gain"/>
+    </Component>
+    <Component type="ScriptPanel" id="pnlOSC1" x="8" y="3" width="402" height="318"
+               parentComponent="pnlMain">
+      <Component type="ScriptButton" id="btnOsc1" x="125" y="13" parentComponent="pnlOSC1"
+                 processorId="Osc1" parameterId="Enabled"/>
+      <Component type="ScriptButton" id="btnOsc1OctDn" x="170" y="238" parentComponent="pnlOSC1"
+                 width="51" height="29" radioGroup="4"/>
+      <Component type="ScriptButton" id="btnOsc1OctUp" x="232" y="238" parentComponent="pnlOSC1"
+                 width="51" height="29" radioGroup="4"/>
+      <Component type="ScriptButton" id="btnOsc1Oct0" x="109" y="238" parentComponent="pnlOSC1"
+                 width="51" height="29" radioGroup="4"/>
+      <Component type="ScriptSlider" id="knbOsc1Pan" x="5" y="265" width="136"
+                 height="45" parentComponent="pnlOSC1" middlePosition="0" min="-100"
+                 max="100" processorId="Osc1" parameterId="Balance"/>
+      <Component type="ScriptSlider" id="knbOsc1SemiTone" x="135" y="265" width="136"
+                 height="45" parentComponent="pnlOSC1"/>
+      <Component type="ScriptSlider" id="knbOsc1FineTune" x="265" y="265" width="136"
+                 height="45" parentComponent="pnlOSC1"/>
+      <Component type="ScriptPanel" id="pnlOsc1Matrix" x="81" y="49" width="223"
+                 height="169" parentComponent="pnlOSC1" allowCallbacks="Clicks &amp; Hover"/>
+    </Component>
+    <Component type="ScriptPanel" id="pnlOSC2" x="367" y="11" width="402" height="318"
+               parentComponent="pnlMain">
+      <Component type="ScriptButton" id="btnOsc2" x="121" y="6" parentComponent="pnlOSC2"
+                 processorId="Osc2" parameterId="Enabled"/>
+      <Component type="ScriptButton" id="btnOsc2OctDn" x="166" y="231" parentComponent="pnlOSC2"
+                 width="51" height="29" radioGroup="4"/>
+      <Component type="ScriptButton" id="btnOsc2OctUp" x="228" y="231" parentComponent="pnlOSC2"
+                 width="51" height="29" radioGroup="4"/>
+      <Component type="ScriptButton" id="btnOsc2Oct" x="105" y="231" parentComponent="pnlOSC2"
+                 width="51" height="29" radioGroup="4"/>
+      <Component type="ScriptSlider" id="knbOsc2Pan" x="1" y="258" width="136"
+                 height="45" parentComponent="pnlOSC2" processorId="Osc2" parameterId="Balance"
+                 min="-100" max="100" middlePosition="0"/>
+      <Component type="ScriptSlider" id="knbOsc2SemiTone" x="131" y="258" width="136"
+                 height="45" parentComponent="pnlOSC2"/>
+      <Component type="ScriptSlider" id="knbOsc2FineTune" x="261" y="258" width="136"
+                 height="45" parentComponent="pnlOSC2"/>
+      <Component type="ScriptPanel" id="pnlOsc2Matrix" x="102" y="52" width="223"
+                 height="169" parentComponent="pnlOSC2" allowCallbacks="Clicks &amp; Hover"/>
+    </Component>
+    <Component type="ScriptPanel" id="pnlKeyboard" x="-5" y="849" width="779"
+               height="166" parentComponent="pnlMain" borderSize="0" borderRadius="0"
+               itemColour2="0" itemColour="0">
+      <Component type="ScriptButton" id="btnOctUp" x="695" y="23" width="50" height="50"
+                 parentComponent="pnlKeyboard" text="+"/>
+      <Component type="ScriptButton" id="btnOctDn" x="695" y="80" width="50" height="50"
+                 parentComponent="pnlKeyboard" text="-"/>
+      <Component type="ScriptFloatingTile" id="fltKeyboard" x="82" y="30" width="583"
+                 height="107" parentComponent="pnlKeyboard" ContentType="Keyboard"
+                 bgColour="4284769380" itemColour="436207615" itemColour2="4294967295"
+                 textColour="4294951115" Data="{&#13;&#10;  &quot;KeyWidth&quot;: 30,&#13;&#10;  &quot;DisplayOctaveNumber&quot;: true,&#13;&#10;  &quot;LowKey&quot;: 9,&#13;&#10;  &quot;HiKey&quot;: 127,&#13;&#10;  &quot;CustomGraphics&quot;: false,&#13;&#10;  &quot;DefaultAppearance&quot;: false,&#13;&#10;  &quot;BlackKeyRatio&quot;: 0.69999999,&#13;&#10;  &quot;ToggleMode&quot;: false,&#13;&#10;  &quot;MidiChannel&quot;: 1,&#13;&#10;  &quot;UseVectorGraphics&quot;: true,&#13;&#10;  &quot;UseFlatStyle&quot;: false,&#13;&#10;  &quot;MPEKeyboard&quot;: false,&#13;&#10;  &quot;MPEStartChannel&quot;: 2,&#13;&#10;  &quot;MPEEndChannel&quot;: 16&#13;&#10;}"/>
+    </Component>
+  </Component>
+</ContentProperties>
