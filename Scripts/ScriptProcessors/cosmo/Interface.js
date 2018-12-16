@@ -22,28 +22,14 @@
 Content.makeFrontInterface(768, 1024);
 
 include("paintRoutines.js");
+include("filterHandler.js");
 include("envelopeHandler.js");
 
 reg i;
 
 envelopeHandler.init();
+filterHandler.init();
 
-//Filter
-const var btnFilter = [];
-
-for (i = 0; i < 4; i++)
-{
-    btnFilter[i] = Content.getComponent("btnFilter"+i);
-    btnFilter[i].setControlCallback(btnFilterCB);
-}
-
-inline function btnADSRFilter(control, value)
-{
-    if (value == 1)
-    {
-        local idx = btnFilter.indexOf(control);
-    }
-}
 
 const var osc1 = {};
 const var osc2 = {};

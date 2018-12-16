@@ -31,16 +31,21 @@
     <Component type="ScriptPanel" id="pnlFilter" x="1" y="648" width="399" height="213"
                parentComponent="pnlMain" itemColour="0" itemColour2="0" borderSize="0"
                borderRadius="0">
-      <Component type="ScriptSlider" id="sliHPF" x="55" y="93" parentComponent="pnlFilter"
-                 style="Vertical" width="30" height="100" mode="Frequency" max="20000"
-                 stepSize="1" suffix=" Hz" middlePosition="1500" processorId="AHDSR Envelope1"
-                 parameterId="Attack" min="20"/>
-      <Component type="ScriptSlider" id="sliLPF" x="116" y="93" parentComponent="pnlFilter"
+      <Component type="ScriptSlider" id="sliFilter0" x="55" y="93" parentComponent="pnlFilter"
                  style="Vertical" width="30" height="100" mode="Frequency" max="20000"
                  stepSize="1" suffix=" Hz" middlePosition="1500" min="20"/>
-      <Component type="ScriptSlider" id="sliRes" x="177" y="93" parentComponent="pnlFilter"
+      <Component type="ScriptSlider" id="sliFilter1" x="116" y="93" parentComponent="pnlFilter"
+                 style="Vertical" width="30" height="100" mode="Frequency" max="20000"
+                 stepSize="1" suffix=" Hz" middlePosition="1500" min="20"/>
+      <Component type="ScriptSlider" id="sliFilter2" x="177" y="93" parentComponent="pnlFilter"
                  style="Vertical" width="30" height="100" middlePosition="1" min="0.30000001"
                  max="8"/>
+      <Component type="ScriptSlider" id="sliFilter3" x="237" y="83" parentComponent="pnlFilter"
+                 width="54" height="47" mode="Time" max="20000" stepSize="0.1"
+                 suffix=" ms" middlePosition="5000"/>
+      <Component type="ScriptSlider" id="sliFilter4" x="305" y="87" parentComponent="pnlFilter"
+                 width="63" height="46" mode="Decibel" max="0" stepSize="0.1"
+                 suffix=" dB" middlePosition="-18" min="-100"/>
       <Component type="ScriptButton" id="btnFilter0" x="40" y="38" parentComponent="pnlFilter"
                  text="All" width="50" height="26" radioGroup="2"/>
       <Component type="ScriptButton" id="btnFilter1" x="100" y="38" parentComponent="pnlFilter"
@@ -49,18 +54,6 @@
                  text="2" width="50" height="26" radioGroup="2"/>
       <Component type="ScriptButton" id="btnFilter3" x="220" y="38" parentComponent="pnlFilter"
                  text="3" width="50" height="26" radioGroup="2"/>
-      <Component type="ScriptSlider" id="sliFilterA" x="237" y="83" parentComponent="pnlFilter"
-                 width="54" height="47" mode="Time" max="20000" stepSize="1" suffix=" ms"
-                 middlePosition="1000"/>
-      <Component type="ScriptSlider" id="sliFilterD" x="240" y="136" parentComponent="pnlFilter"
-                 width="59" height="48" mode="Time" max="20000" stepSize="1" suffix=" ms"
-                 middlePosition="1000"/>
-      <Component type="ScriptSlider" id="sliFilterS" x="305" y="87" parentComponent="pnlFilter"
-                 width="63" height="46" mode="Time" max="20000" stepSize="1" suffix=" ms"
-                 middlePosition="1000"/>
-      <Component type="ScriptSlider" id="sliFilterR" x="314" y="135" parentComponent="pnlFilter"
-                 width="63" height="49" mode="Time" max="20000" stepSize="1" suffix=" ms"
-                 middlePosition="1000"/>
     </Component>
     <Component type="ScriptPanel" id="pnlEFX" x="40" y="480" width="311" height="182"
                parentComponent="pnlMain">

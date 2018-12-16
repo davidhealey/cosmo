@@ -10,24 +10,22 @@
           <ChildProcessors/>
           <Content>
             <Control type="ScriptButton" id="btnADSR0" value="0"/>
-            <Control type="ScriptButton" id="btnADSR1" value="1"/>
+            <Control type="ScriptButton" id="btnADSR1" value="0"/>
             <Control type="ScriptButton" id="btnADSR2" value="0"/>
-            <Control type="ScriptButton" id="btnADSR3" value="0"/>
-            <Control type="ScriptSlider" id="sliADSR0" value="20000"/>
+            <Control type="ScriptButton" id="btnADSR3" value="1"/>
+            <Control type="ScriptSlider" id="sliADSR0" value="3167.4001"/>
             <Control type="ScriptSlider" id="sliADSR1" value="20000"/>
-            <Control type="ScriptSlider" id="sliADSR2" value="-3.9999998"/>
-            <Control type="ScriptSlider" id="sliADSR3" value="8798.4004"/>
-            <Control type="ScriptSlider" id="sliHPF" value="0"/>
-            <Control type="ScriptSlider" id="sliLPF" value="0"/>
-            <Control type="ScriptSlider" id="sliRes" value="0"/>
+            <Control type="ScriptSlider" id="sliADSR2" value="0"/>
+            <Control type="ScriptSlider" id="sliADSR3" value="9629.2998"/>
+            <Control type="ScriptSlider" id="sliFilter0" value="1870"/>
+            <Control type="ScriptSlider" id="sliFilter1" value="20"/>
+            <Control type="ScriptSlider" id="sliFilter2" value="0.40000001"/>
+            <Control type="ScriptSlider" id="sliFilter3" value="0"/>
+            <Control type="ScriptSlider" id="sliFilter4" value="0"/>
             <Control type="ScriptButton" id="btnFilter0" value="0"/>
             <Control type="ScriptButton" id="btnFilter1" value="0"/>
             <Control type="ScriptButton" id="btnFilter2" value="0"/>
-            <Control type="ScriptButton" id="btnFilter3" value="0"/>
-            <Control type="ScriptSlider" id="sliFilterA" value="0"/>
-            <Control type="ScriptSlider" id="sliFilterD" value="0"/>
-            <Control type="ScriptSlider" id="sliFilterS" value="0"/>
-            <Control type="ScriptSlider" id="sliFilterR" value="0"/>
+            <Control type="ScriptButton" id="btnFilter3" value="1"/>
             <Control type="ScriptSlider" id="Knob1" value="0"/>
             <Control type="ScriptButton" id="btnChorus0" value="0"/>
             <Control type="ScriptButton" id="btnChorus1" value="0"/>
@@ -159,9 +157,9 @@
         <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1">
           <ChildProcessors>
             <Processor Type="AHDSR" ID="AHDSR Envelope0" Bypassed="0" Monophonic="0"
-                       Retrigger="1" Intensity="1" AttackCurve="0" DecayCurve="0" Attack="20000"
-                       AttackLevel="0" Hold="412" Decay="20000" Sustain="-3.9999998"
-                       Release="8798.4004" EcoMode="1">
+                       Retrigger="1" Intensity="1" AttackCurve="0" DecayCurve="0" Attack="3167.4001"
+                       AttackLevel="0" Hold="412" Decay="20000" Sustain="-5" Release="9629.2998"
+                       EcoMode="1">
               <ChildProcessors>
                 <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1">
                   <ChildProcessors/>
@@ -191,7 +189,68 @@
           <ChildProcessors/>
         </Processor>
         <Processor Type="EffectChain" ID="FX" Bypassed="0">
-          <ChildProcessors/>
+          <ChildProcessors>
+            <Processor Type="PolyphonicFilter" ID="lpf0" Bypassed="0" Gain="0" Frequency="20"
+                       Q="0.30000001" Mode="6" Quality="0" BipolarIntensity="0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Frequency Modulation" Bypassed="0"
+                           Intensity="1">
+                  <ChildProcessors>
+                    <Processor Type="AHDSR" ID="lp0AHDSR" Bypassed="0" Monophonic="0" Retrigger="1"
+                               Intensity="1" AttackCurve="0" DecayCurve="0" Attack="0" AttackLevel="0"
+                               Hold="10" Decay="300" Sustain="0" Release="20" EcoMode="1">
+                      <ChildProcessors>
+                        <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1">
+                          <ChildProcessors/>
+                        </Processor>
+                        <Processor Type="ModulatorChain" ID="Attack Level" Bypassed="0" Intensity="1">
+                          <ChildProcessors/>
+                        </Processor>
+                        <Processor Type="ModulatorChain" ID="Decay Time" Bypassed="0" Intensity="1">
+                          <ChildProcessors/>
+                        </Processor>
+                        <Processor Type="ModulatorChain" ID="Sustain Level" Bypassed="0" Intensity="1">
+                          <ChildProcessors/>
+                        </Processor>
+                        <Processor Type="ModulatorChain" ID="Release Time" Bypassed="0" Intensity="1">
+                          <ChildProcessors/>
+                        </Processor>
+                      </ChildProcessors>
+                    </Processor>
+                  </ChildProcessors>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Bipolar Freq Modulation" Bypassed="0"
+                           Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Q Modulation" Bypassed="0" Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+            <Processor Type="PolyphonicFilter" ID="hpf0" Bypassed="0" Gain="0" Frequency="1870"
+                       Q="1" Mode="10" Quality="0" BipolarIntensity="0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Frequency Modulation" Bypassed="0"
+                           Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Bipolar Freq Modulation" Bypassed="0"
+                           Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Q Modulation" Bypassed="0" Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+          </ChildProcessors>
         </Processor>
         <Processor Type="ModulatorChain" ID="Sample Start" Bypassed="0" Intensity="1">
           <ChildProcessors/>
@@ -221,9 +280,9 @@
         <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1">
           <ChildProcessors>
             <Processor Type="AHDSR" ID="AHDSR Envelope1" Bypassed="0" Monophonic="0"
-                       Retrigger="1" Intensity="1" AttackCurve="0" DecayCurve="0" Attack="0"
+                       Retrigger="1" Intensity="1" AttackCurve="0" DecayCurve="0" Attack="3167.4001"
                        AttackLevel="0" Hold="10" Decay="20000" Sustain="-3.9999998"
-                       Release="8798.4004" EcoMode="1">
+                       Release="9629.2998" EcoMode="1">
               <ChildProcessors>
                 <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1">
                   <ChildProcessors/>
@@ -253,7 +312,68 @@
           <ChildProcessors/>
         </Processor>
         <Processor Type="EffectChain" ID="FX" Bypassed="0">
-          <ChildProcessors/>
+          <ChildProcessors>
+            <Processor Type="PolyphonicFilter" ID="lpf1" Bypassed="0" Gain="0" Frequency="20"
+                       Q="0.30000001" Mode="6" Quality="0" BipolarIntensity="0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Frequency Modulation" Bypassed="0"
+                           Intensity="1">
+                  <ChildProcessors>
+                    <Processor Type="AHDSR" ID="lp1AHDSR" Bypassed="0" Monophonic="0" Retrigger="1"
+                               Intensity="1" AttackCurve="0" DecayCurve="0" Attack="0" AttackLevel="0"
+                               Hold="10" Decay="300" Sustain="0" Release="20" EcoMode="1">
+                      <ChildProcessors>
+                        <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1">
+                          <ChildProcessors/>
+                        </Processor>
+                        <Processor Type="ModulatorChain" ID="Attack Level" Bypassed="0" Intensity="1">
+                          <ChildProcessors/>
+                        </Processor>
+                        <Processor Type="ModulatorChain" ID="Decay Time" Bypassed="0" Intensity="1">
+                          <ChildProcessors/>
+                        </Processor>
+                        <Processor Type="ModulatorChain" ID="Sustain Level" Bypassed="0" Intensity="1">
+                          <ChildProcessors/>
+                        </Processor>
+                        <Processor Type="ModulatorChain" ID="Release Time" Bypassed="0" Intensity="1">
+                          <ChildProcessors/>
+                        </Processor>
+                      </ChildProcessors>
+                    </Processor>
+                  </ChildProcessors>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Bipolar Freq Modulation" Bypassed="0"
+                           Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Q Modulation" Bypassed="0" Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+            <Processor Type="PolyphonicFilter" ID="hpf1" Bypassed="0" Gain="0" Frequency="1870"
+                       Q="1" Mode="10" Quality="0" BipolarIntensity="0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Frequency Modulation" Bypassed="0"
+                           Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Bipolar Freq Modulation" Bypassed="0"
+                           Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Q Modulation" Bypassed="0" Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+          </ChildProcessors>
         </Processor>
         <Processor Type="ModulatorChain" ID="Sample Start" Bypassed="0" Intensity="1">
           <ChildProcessors/>
@@ -283,8 +403,8 @@
         <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1">
           <ChildProcessors>
             <Processor Type="AHDSR" ID="AHDSR Envelope2" Bypassed="0" Monophonic="0"
-                       Retrigger="1" Intensity="1" AttackCurve="0" DecayCurve="0" Attack="0"
-                       AttackLevel="0" Hold="10" Decay="20000" Sustain="0" Release="8798.4004"
+                       Retrigger="1" Intensity="1" AttackCurve="0" DecayCurve="0" Attack="3167.4001"
+                       AttackLevel="0" Hold="10" Decay="20000" Sustain="0" Release="9629.2998"
                        EcoMode="1">
               <ChildProcessors>
                 <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1">
@@ -311,6 +431,66 @@
         </Processor>
         <Processor Type="EffectChain" ID="FX" Bypassed="0">
           <ChildProcessors>
+            <Processor Type="PolyphonicFilter" ID="lpf2" Bypassed="0" Gain="0" Frequency="20"
+                       Q="0.40000001" Mode="6" Quality="0" BipolarIntensity="0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Frequency Modulation" Bypassed="0"
+                           Intensity="1">
+                  <ChildProcessors>
+                    <Processor Type="AHDSR" ID="lp2AHDSR" Bypassed="0" Monophonic="0" Retrigger="1"
+                               Intensity="1" AttackCurve="0" DecayCurve="0" Attack="0" AttackLevel="0"
+                               Hold="10" Decay="300" Sustain="0" Release="20" EcoMode="1">
+                      <ChildProcessors>
+                        <Processor Type="ModulatorChain" ID="Attack Time" Bypassed="0" Intensity="1">
+                          <ChildProcessors/>
+                        </Processor>
+                        <Processor Type="ModulatorChain" ID="Attack Level" Bypassed="0" Intensity="1">
+                          <ChildProcessors/>
+                        </Processor>
+                        <Processor Type="ModulatorChain" ID="Decay Time" Bypassed="0" Intensity="1">
+                          <ChildProcessors/>
+                        </Processor>
+                        <Processor Type="ModulatorChain" ID="Sustain Level" Bypassed="0" Intensity="1">
+                          <ChildProcessors/>
+                        </Processor>
+                        <Processor Type="ModulatorChain" ID="Release Time" Bypassed="0" Intensity="1">
+                          <ChildProcessors/>
+                        </Processor>
+                      </ChildProcessors>
+                    </Processor>
+                  </ChildProcessors>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Bipolar Freq Modulation" Bypassed="0"
+                           Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Q Modulation" Bypassed="0" Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+            <Processor Type="PolyphonicFilter" ID="hpf2" Bypassed="0" Gain="0" Frequency="1870"
+                       Q="1" Mode="10" Quality="0" BipolarIntensity="0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Frequency Modulation" Bypassed="0"
+                           Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Gain Modulation" Bypassed="0" Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Bipolar Freq Modulation" Bypassed="0"
+                           Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+                <Processor Type="ModulatorChain" ID="Q Modulation" Bypassed="0" Intensity="1">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
             <Processor Type="SimpleGain" ID="osc3SimpleGain" Bypassed="0" Gain="0" Delay="0"
                        Width="100" Balance="0">
               <ChildProcessors>

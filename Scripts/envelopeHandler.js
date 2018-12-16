@@ -26,7 +26,7 @@ namespace envelopeHandler
     const var env = []; //ADSR Envelopes
     const var btnADSR = []; //Buttons to select OSC
     const var sliADSR = []; //Envelope controls
-        
+    
     inline function init() 
     {
         for (i = 0; i < 4; i++)
@@ -44,7 +44,7 @@ namespace envelopeHandler
         }
 
         //Envelope parameter enums
-        const var params = [env[0].Attack, env[0].Decay, env[0].Sustain, env[0].Release];
+        const var adsrParams = [env[0].Attack, env[0].Decay, env[0].Sustain, env[0].Release];
     }
     
     //Envelope selection button callback
@@ -54,7 +54,7 @@ namespace envelopeHandler
     
         for (i = 0; i < 4; i++)
         {
-            if (idx != 0) sliADSR[i].setValue(env[idx-1].getAttribute(params[i]));
+            if (idx != 0 && value == 1) sliADSR[i].setValue(env[idx-1].getAttribute(adsrParams[i]));
         }
     }
 
@@ -67,7 +67,7 @@ namespace envelopeHandler
         {
             if (btnADSR[i+1].getValue() == 1 || btnADSR[0].getValue())
             {
-                env[i].setAttribute(params[idx], value);    
+                env[i].setAttribute(adsrParams[idx], value);    
             }
         }
     }
