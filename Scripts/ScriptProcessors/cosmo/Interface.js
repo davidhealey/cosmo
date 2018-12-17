@@ -77,6 +77,14 @@ osc1.buttonMatrix.setMouseCallback(function(event)
 
 //Keyboard octave shift buttons
 const var fltKeyboard = Content.getComponent("fltKeyboard");
+const var keyboardData = {
+  "Type": "Keyboard",
+  "LowKey": 48,
+  "KeyWidth": 30,
+  "DisplayOctaveNumber": true,
+  "DefaultAppearance": false,
+  "UseVectorGraphics": true,
+}
 
 const var octButton = [];
 octButton[0] = Content.getComponent("btnOctUp");
@@ -88,7 +96,17 @@ octButton[1].setControlCallback(changeOctave);
 inline function changeOctave(control, value)
 {
     local idx = octButton.indexOf(control); //0 = up, 1 = down   
-    Engine.setLowestKeyToDisplay(64);
+
+    if (idx == 0 && keyboardData.LowKey < 72)
+    {
+        keyboardData.LowKey = keyboardData.LowKey + 12;
+    }
+    else if (keyboardData.LowKey > 11)
+    {
+        keyboardData.LowKey = keyboardData.LowKey - 12;
+    }
+    
+    fltKeyboard.setContentData(keyboardData);
 }function onNoteOn()
 {
 	
