@@ -62,12 +62,14 @@
                  max="20000" stepSize="1" suffix=" Hz" middlePosition="1500"/>
       <Component type="ScriptButton" id="btnChorus0" x="23" y="79" parentComponent="pnlEFX"
                  processorId="Chorus1" parameterId="Enabled"/>
-      <Component type="ScriptButton" id="btnChorus1" x="166" y="79" parentComponent="pnlEFX"
-                 processorId="Chorus2" parameterId="Enabled"/>
       <Component type="ScriptSlider" id="knbReverb" x="9" y="118" parentComponent="pnlEFX"
                  processorId="Simple Reverb1" parameterId="WetLevel" mode="NormalizedPercentage"
                  suffix="%" middlePosition="0.5"/>
-      <Component type="ScriptSlider" id="knbDelay" x="168" y="118" parentComponent="pnlEFX"/>
+      <Component type="ScriptSlider" id="knbDelayTm" x="168" y="117" parentComponent="pnlEFX"
+                 mode="TempoSync" max="18" stepSize="1" middlePosition="9"/>
+      <Component type="ScriptSlider" id="knbDelayMix" x="173" y="74" parentComponent="pnlEFX"
+                 mode="NormalizedPercentage" middlePosition="0.5" suffix="%" processorId="Delay1"
+                 parameterId="Mix" defaultValue="0.5"/>
     </Component>
     <Component type="ScriptPanel" id="pnlMaster" x="620" y="467" width="149"
                height="228" parentComponent="pnlMain">
@@ -76,9 +78,9 @@
                  middlePosition="-18" style="Vertical" width="30" height="100"
                  processorId="Simple Gain1" parameterId="Gain"/>
       <Component type="ScriptButton" id="btnPoly" x="13" y="138" parentComponent="pnlMaster"
-                 radioGroup="3"/>
+                 radioGroup="3" processorId="legatoWithRetrigger" parameterId="Bypass"/>
       <Component type="ScriptButton" id="btnMono" x="13" y="178" parentComponent="pnlMaster"
-                 radioGroup="3"/>
+                 radioGroup="3" processorId="legatoWithRetrigger" parameterId="Enabled"/>
     </Component>
     <Component type="ScriptPanel" id="pnlOSC3" x="36" y="335" width="727" height="134"
                parentComponent="pnlMain">

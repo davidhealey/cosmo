@@ -30,12 +30,23 @@ reg i;
 envelopeHandler.init();
 filterHandler.init();
 
+//Delay
+const var Delay1 = Synth.getEffect("Delay1");
+const var knbDelayTm = Content.getComponent("knbDelayTm");
+knbDelayTm.setControlCallback(delayTimeCB);
+
+inline function delayTimeCB(control, value)
+{
+    Delay1.setAttribute(Delay1.DelayTimeLeft, value);
+    Delay1.setAttribute(Delay1.DelayTimeRight, value);
+}
+
 
 const var osc1 = {};
 const var osc2 = {};
 osc1.buttonMatrix = Content.getComponent("pnlOsc1Matrix");
 
-osc1.buttonMatrix.data.numRows = 4;
+osc1.buttonMatrix.data.numRows = 5;
 osc1.buttonMatrix.data.numColumns = 5;
 osc1.buttonMatrix.setPaintRoutine(paintRoutines.buttonMatrix);
 osc1.buttonMatrix.setMouseCallback(function(event)

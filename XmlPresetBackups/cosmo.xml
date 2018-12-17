@@ -19,18 +19,18 @@
             <Control type="ScriptSlider" id="sliADSR3" value="9629.2998"/>
             <Control type="ScriptSlider" id="sliFilter0" value="1870"/>
             <Control type="ScriptSlider" id="sliFilter1" value="20"/>
-            <Control type="ScriptSlider" id="sliFilter2" value="0.40000001"/>
+            <Control type="ScriptSlider" id="sliFilter2" value="0.30000001"/>
             <Control type="ScriptSlider" id="sliFilter3" value="0"/>
             <Control type="ScriptSlider" id="sliFilter4" value="0"/>
-            <Control type="ScriptButton" id="btnFilter0" value="0"/>
+            <Control type="ScriptButton" id="btnFilter0" value="1"/>
             <Control type="ScriptButton" id="btnFilter1" value="0"/>
             <Control type="ScriptButton" id="btnFilter2" value="0"/>
-            <Control type="ScriptButton" id="btnFilter3" value="1"/>
+            <Control type="ScriptButton" id="btnFilter3" value="0"/>
             <Control type="ScriptSlider" id="Knob1" value="0"/>
             <Control type="ScriptButton" id="btnChorus0" value="0"/>
-            <Control type="ScriptButton" id="btnChorus1" value="0"/>
             <Control type="ScriptSlider" id="knbReverb" value="0"/>
-            <Control type="ScriptSlider" id="knbDelay" value="0"/>
+            <Control type="ScriptSlider" id="knbDelayTm" value="9"/>
+            <Control type="ScriptSlider" id="knbDelayMix" value="0.5"/>
             <Control type="ScriptSlider" id="sliMasterVol" value="0"/>
             <Control type="ScriptButton" id="btnPoly" value="0"/>
             <Control type="ScriptButton" id="btnMono" value="1"/>
@@ -58,6 +58,10 @@
             <Control type="ScriptButton" id="btnOctDn" value="0"/>
           </Content>
           <UIData Source="cosmoUIData"/>
+        </Processor>
+        <Processor Type="LegatoWithRetrigger" ID="legatoWithRetrigger" Bypassed="0">
+          <ChildProcessors/>
+          <Content/>
         </Processor>
       </ChildProcessors>
     </Processor>
@@ -93,13 +97,14 @@
           <ChildProcessors/>
           <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
         </Processor>
-        <Processor Type="Chorus" ID="Chorus1" Bypassed="1" Rate="0.30000001" Width="0.43000001"
+        <Processor Type="Chorus" ID="Chorus1" Bypassed="0" Rate="0.30000001" Width="0.43000001"
                    Feedback="0.30000001" Delay="1">
           <ChildProcessors/>
           <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
         </Processor>
-        <Processor Type="Chorus" ID="Chorus2" Bypassed="1" Rate="0.30000001" Width="0.43000001"
-                   Feedback="0.30000001" Delay="1">
+        <Processor Type="Delay" ID="Delay1" Bypassed="0" DelayTimeLeft="9" DelayTimeRight="9"
+                   FeedbackLeft="0.5" FeedbackRight="0.5" LowPassFreq="20000" HiPassFreq="40"
+                   Mix="0.5" TempoSync="1">
           <ChildProcessors/>
           <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
         </Processor>
@@ -432,7 +437,7 @@
         <Processor Type="EffectChain" ID="FX" Bypassed="0">
           <ChildProcessors>
             <Processor Type="PolyphonicFilter" ID="lpf2" Bypassed="0" Gain="0" Frequency="20"
-                       Q="0.40000001" Mode="6" Quality="0" BipolarIntensity="0">
+                       Q="0.30000001" Mode="6" Quality="0" BipolarIntensity="0">
               <ChildProcessors>
                 <Processor Type="ModulatorChain" ID="Frequency Modulation" Bypassed="0"
                            Intensity="1">
