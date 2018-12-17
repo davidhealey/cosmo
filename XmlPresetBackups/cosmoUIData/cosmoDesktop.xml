@@ -57,9 +57,9 @@
     </Component>
     <Component type="ScriptPanel" id="pnlEFX" x="40" y="480" width="311" height="182"
                parentComponent="pnlMain">
-      <Component type="ScriptSlider" id="Knob1" x="97" y="34" parentComponent="pnlEFX"
-                 style="Horizontal" width="100" height="30" mode="Frequency" min="20"
-                 max="20000" stepSize="1" suffix=" Hz" middlePosition="1500"/>
+      <Component type="ScriptSlider" id="sliEQTilt" x="97" y="34" parentComponent="pnlEFX"
+                 style="Horizontal" width="100" height="30" max="6" stepSize="0.1"
+                 middlePosition="3"/>
       <Component type="ScriptButton" id="btnChorus0" x="23" y="79" parentComponent="pnlEFX"
                  processorId="Chorus1" parameterId="Enabled"/>
       <Component type="ScriptSlider" id="knbReverb" x="9" y="118" parentComponent="pnlEFX"

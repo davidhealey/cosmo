@@ -26,8 +26,8 @@
             <Control type="ScriptButton" id="btnFilter1" value="0"/>
             <Control type="ScriptButton" id="btnFilter2" value="0"/>
             <Control type="ScriptButton" id="btnFilter3" value="0"/>
-            <Control type="ScriptSlider" id="Knob1" value="0"/>
-            <Control type="ScriptButton" id="btnChorus0" value="0"/>
+            <Control type="ScriptSlider" id="sliEQTilt" value="6"/>
+            <Control type="ScriptButton" id="btnChorus0" value="1"/>
             <Control type="ScriptSlider" id="knbReverb" value="0"/>
             <Control type="ScriptSlider" id="knbDelayTm" value="9"/>
             <Control type="ScriptSlider" id="knbDelayMix" value="0.5"/>
@@ -73,6 +73,11 @@
     </Processor>
     <Processor Type="EffectChain" ID="FX" Bypassed="0">
       <ChildProcessors>
+        <Processor Type="Limiter" ID="Limiter1" Bypassed="0" Thresh="0.60000002"
+                   Output="0.60000002" Release="0.5" Attack="0.15000001" Knee="0.40000001">
+          <ChildProcessors/>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+        </Processor>
         <Processor Type="SimpleGain" ID="Simple Gain1" Bypassed="0" Gain="0" Delay="0"
                    Width="100" Balance="0">
           <ChildProcessors>
@@ -105,6 +110,12 @@
         <Processor Type="Delay" ID="Delay1" Bypassed="0" DelayTimeLeft="9" DelayTimeRight="9"
                    FeedbackLeft="0.5" FeedbackRight="0.5" LowPassFreq="20000" HiPassFreq="40"
                    Mix="0.5" TempoSync="1">
+          <ChildProcessors/>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+        </Processor>
+        <Processor Type="CurveEq" ID="Parametriq EQ1" Bypassed="0" NumFilters="2"
+                   Band0="0" Band1="220" Band2="1" Band3="1" Band4="2" Band5="6"
+                   Band6="7500" Band7="1" Band8="1" Band9="3">
           <ChildProcessors/>
           <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
         </Processor>

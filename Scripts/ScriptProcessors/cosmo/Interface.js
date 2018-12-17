@@ -41,6 +41,19 @@ inline function delayTimeCB(control, value)
     Delay1.setAttribute(Delay1.DelayTimeRight, value);
 }
 
+//EQ Tilt
+const var ParametriqEQ1 = Synth.getEffect("Parametriq EQ1");
+const var sliEQTilt = Content.getComponent("sliEQTilt");
+
+sliEQTilt.setControlCallback(sliEQTiltCB);
+
+inline function sliEQTiltCB(control, value)
+{
+    ParametriqEQ1.setAttribute(0*ParametriqEQ1.BandOffset+ParametriqEQ1.Gain, control.get("max")-value);
+    ParametriqEQ1.setAttribute(1*ParametriqEQ1.BandOffset+ParametriqEQ1.Gain, value);
+}
+
+
 
 const var osc1 = {};
 const var osc2 = {};
