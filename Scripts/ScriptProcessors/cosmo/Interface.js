@@ -53,8 +53,6 @@ inline function sliEQTiltCB(control, value)
     ParametriqEQ1.setAttribute(1*ParametriqEQ1.BandOffset+ParametriqEQ1.Gain, value);
 }
 
-
-
 const var osc1 = {};
 const var osc2 = {};
 osc1.buttonMatrix = Content.getComponent("pnlOsc1Matrix");

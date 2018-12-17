@@ -108,12 +108,15 @@
                parentComponent="pnlMain">
       <Component type="ScriptButton" id="btnOsc1" x="125" y="13" parentComponent="pnlOSC1"
                  processorId="Osc1" parameterId="Enabled"/>
-      <Component type="ScriptButton" id="btnOsc1OctDn" x="170" y="238" parentComponent="pnlOSC1"
-                 width="51" height="29" radioGroup="4"/>
-      <Component type="ScriptButton" id="btnOsc1OctUp" x="232" y="238" parentComponent="pnlOSC1"
-                 width="51" height="29" radioGroup="4"/>
       <Component type="ScriptButton" id="btnOsc1Oct0" x="109" y="238" parentComponent="pnlOSC1"
-                 width="51" height="29" radioGroup="4"/>
+                 width="51" height="29" radioGroup="4" processorId="osc1OctaveShifter"
+                 parameterId="btnDn"/>
+      <Component type="ScriptButton" id="btnOsc1Oct1" x="170" y="238" parentComponent="pnlOSC1"
+                 width="51" height="29" radioGroup="4" processorId="osc1OctaveShifter"
+                 parameterId="btn0"/>
+      <Component type="ScriptButton" id="btnOsc1Oct2" x="232" y="238" parentComponent="pnlOSC1"
+                 width="51" height="29" radioGroup="4" processorId="osc1OctaveShifter"
+                 parameterId="btnUp"/>
       <Component type="ScriptSlider" id="knbOsc1Pan" x="5" y="265" width="136"
                  height="45" parentComponent="pnlOSC1" middlePosition="0" min="-100"
                  max="100" processorId="Osc1" parameterId="Balance"/>
@@ -128,12 +131,15 @@
                parentComponent="pnlMain">
       <Component type="ScriptButton" id="btnOsc2" x="121" y="6" parentComponent="pnlOSC2"
                  processorId="Osc2" parameterId="Enabled"/>
-      <Component type="ScriptButton" id="btnOsc2OctDn" x="166" y="231" parentComponent="pnlOSC2"
-                 width="51" height="29" radioGroup="4"/>
-      <Component type="ScriptButton" id="btnOsc2OctUp" x="228" y="231" parentComponent="pnlOSC2"
-                 width="51" height="29" radioGroup="4"/>
-      <Component type="ScriptButton" id="btnOsc2Oct" x="105" y="231" parentComponent="pnlOSC2"
-                 width="51" height="29" radioGroup="4"/>
+      <Component type="ScriptButton" id="btnOsc2Oct0" x="105" y="231" parentComponent="pnlOSC2"
+                 width="51" height="29" radioGroup="4" processorId="osc2OctaveShifter"
+                 parameterId="btnDn"/>
+      <Component type="ScriptButton" id="btnOsc2Oct1" x="166" y="231" parentComponent="pnlOSC2"
+                 width="51" height="29" radioGroup="4" processorId="osc2OctaveShifter"
+                 parameterId="btn0"/>
+      <Component type="ScriptButton" id="btnOsc2Oct2" x="228" y="231" parentComponent="pnlOSC2"
+                 width="51" height="29" radioGroup="4" processorId="osc2OctaveShifter"
+                 parameterId="btnUp"/>
       <Component type="ScriptSlider" id="knbOsc2Pan" x="1" y="258" width="136"
                  height="45" parentComponent="pnlOSC2" processorId="Osc2" parameterId="Balance"
                  min="-100" max="100" middlePosition="0"/>
