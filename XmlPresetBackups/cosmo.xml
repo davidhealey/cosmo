@@ -34,12 +34,6 @@
             <Control type="ScriptSlider" id="sliMasterVol" value="0"/>
             <Control type="ScriptButton" id="btnPoly" value="0"/>
             <Control type="ScriptButton" id="btnMono" value="1"/>
-            <Control type="ScriptButton" id="btnOsc3" value="1"/>
-            <Control type="ScriptSlider" id="sliOscType" value="1"/>
-            <Control type="ScriptSlider" id="sliMod" value="0.5"/>
-            <Control type="ScriptSlider" id="sliSemiTone" value="0"/>
-            <Control type="ScriptSlider" id="sliFineTune" value="2.0816682e-15"/>
-            <Control type="ScriptSlider" id="sliOscVol" value="0"/>
             <Control type="ScriptButton" id="btnOsc1" value="1"/>
             <Control type="ScriptButton" id="btnOsc1Oct0" value="0"/>
             <Control type="ScriptButton" id="btnOsc1Oct1" value="0"/>
@@ -54,6 +48,12 @@
             <Control type="ScriptSlider" id="knbOsc2Pan" value="0"/>
             <Control type="ScriptSlider" id="knbOsc2SemiTone" value="0"/>
             <Control type="ScriptSlider" id="knbOsc2FineTune" value="0"/>
+            <Control type="ScriptButton" id="btnOsc3" value="1"/>
+            <Control type="ScriptSlider" id="sliOscType" value="1"/>
+            <Control type="ScriptSlider" id="sliMod" value="0.5"/>
+            <Control type="ScriptSlider" id="sliSemiTone" value="0"/>
+            <Control type="ScriptSlider" id="sliFineTune" value="2.0816682e-15"/>
+            <Control type="ScriptSlider" id="sliOscVol" value="0"/>
             <Control type="ScriptButton" id="btnOctUp" value="0"/>
             <Control type="ScriptButton" id="btnOctDn" value="0"/>
           </Content>
@@ -160,7 +160,7 @@
               <ChildProcessors/>
               <Content>
                 <Control type="ScriptButton" id="btnDn" value="0"/>
-                <Control type="ScriptButton" id="btn0" value="1"/>
+                <Control type="ScriptButton" id="btn0" value="0"/>
                 <Control type="ScriptButton" id="btnUp" value="0"/>
               </Content>
               <UIData>

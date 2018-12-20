@@ -82,28 +82,6 @@
       <Component type="ScriptButton" id="btnMono" x="13" y="178" parentComponent="pnlMaster"
                  radioGroup="3" processorId="legatoWithRetrigger" parameterId="Enabled"/>
     </Component>
-    <Component type="ScriptPanel" id="pnlOSC3" x="36" y="335" width="727" height="134"
-               parentComponent="pnlMain">
-      <Component type="ScriptButton" id="btnOsc3" x="259" y="25" parentComponent="pnlOSC3"
-                 processorId="Osc3" parameterId="Enabled"/>
-      <Component type="ScriptSlider" id="sliOscType" x="14" y="69" width="147"
-                 height="48" parentComponent="pnlOSC3" max="9" stepSize="1" processorId="Osc3"
-                 parameterId="WaveForm1" min="1"/>
-      <Component type="ScriptSlider" id="sliMod" x="177" y="69" width="147" height="48"
-                 parentComponent="pnlOSC3" processorId="Osc3" parameterId="PulseWidth1"
-                 defaultValue="0.5" mode="NormalizedPercentage" suffix="%" middlePosition="0.5"/>
-      <Component type="ScriptSlider" id="sliSemiTone" x="340" y="69" width="147"
-                 height="48" parentComponent="pnlOSC3" processorId="osc3Transposer"
-                 parameterId="TransposeAmount" min="-24" max="24" middlePosition="0"
-                 stepSize="1"/>
-      <Component type="ScriptSlider" id="sliFineTune" x="504" y="69" width="147"
-                 height="48" parentComponent="pnlOSC3" processorId="Osc3" parameterId="Detune1"
-                 max="100" middlePosition="0" min="-100"/>
-      <Component type="ScriptSlider" id="sliOscVol" x="671" y="22" width="30"
-                 height="100" parentComponent="pnlOSC3" style="Vertical" mode="Decibel"
-                 min="-100" max="0" stepSize="0.1" suffix=" dB" middlePosition="-18"
-                 processorId="osc3SimpleGain" parameterId="Gain"/>
-    </Component>
     <Component type="ScriptPanel" id="pnlOSC1" x="8" y="3" width="402" height="318"
                parentComponent="pnlMain">
       <Component type="ScriptButton" id="btnOsc1" x="125" y="13" parentComponent="pnlOSC1"
@@ -150,6 +128,28 @@
       <Component type="ScriptPanel" id="pnlOsc2Matrix" x="102" y="52" width="223"
                  height="169" parentComponent="pnlOSC2" allowCallbacks="Clicks &amp; Hover"/>
     </Component>
+    <Component type="ScriptPanel" id="pnlOSC3" x="36" y="335" width="727" height="134"
+               parentComponent="pnlMain">
+      <Component type="ScriptButton" id="btnOsc3" x="259" y="25" parentComponent="pnlOSC3"
+                 processorId="Osc3" parameterId="Enabled"/>
+      <Component type="ScriptSlider" id="sliOscType" x="14" y="69" width="147"
+                 height="48" parentComponent="pnlOSC3" max="9" stepSize="1" processorId="Osc3"
+                 parameterId="WaveForm1" min="1"/>
+      <Component type="ScriptSlider" id="sliMod" x="177" y="69" width="147" height="48"
+                 parentComponent="pnlOSC3" processorId="Osc3" parameterId="PulseWidth1"
+                 defaultValue="0.5" mode="NormalizedPercentage" suffix="%" middlePosition="0.5"/>
+      <Component type="ScriptSlider" id="sliSemiTone" x="340" y="69" width="147"
+                 height="48" parentComponent="pnlOSC3" processorId="osc3Transposer"
+                 parameterId="TransposeAmount" min="-24" max="24" middlePosition="0"
+                 stepSize="1"/>
+      <Component type="ScriptSlider" id="sliFineTune" x="504" y="69" width="147"
+                 height="48" parentComponent="pnlOSC3" processorId="Osc3" parameterId="Detune1"
+                 max="100" middlePosition="0" min="-100"/>
+      <Component type="ScriptSlider" id="sliOscVol" x="671" y="22" width="30"
+                 height="100" parentComponent="pnlOSC3" style="Vertical" mode="Decibel"
+                 min="-100" max="0" stepSize="0.1" suffix=" dB" middlePosition="-18"
+                 processorId="osc3SimpleGain" parameterId="Gain"/>
+    </Component>
     <Component type="ScriptPanel" id="pnlKeyboard" x="-5" y="849" width="779"
                height="166" parentComponent="pnlMain" borderSize="0" borderRadius="0"
                itemColour2="0" itemColour="0">
@@ -160,7 +160,7 @@
       <Component type="ScriptFloatingTile" id="fltKeyboard" x="82" y="30" width="583"
                  height="107" parentComponent="pnlKeyboard" ContentType="Keyboard"
                  bgColour="4284769380" itemColour="436207615" itemColour2="4294967295"
-                 textColour="4294951115" Data="{&#13;&#10;  &quot;KeyWidth&quot;: 30,&#13;&#10;  &quot;DisplayOctaveNumber&quot;: true,&#13;&#10;  &quot;LowKey&quot;: 24,&#13;&#10;  &quot;HiKey&quot;: 127,&#13;&#10;  &quot;CustomGraphics&quot;: false,&#13;&#10;  &quot;DefaultAppearance&quot;: false,&#13;&#10;  &quot;BlackKeyRatio&quot;: 0.69999999,&#13;&#10;  &quot;ToggleMode&quot;: false,&#13;&#10;  &quot;MidiChannel&quot;: 1,&#13;&#10;  &quot;UseVectorGraphics&quot;: true,&#13;&#10;  &quot;UseFlatStyle&quot;: false,&#13;&#10;  &quot;MPEKeyboard&quot;: false,&#13;&#10;  &quot;MPEStartChannel&quot;: 2,&#13;&#10;  &quot;MPEEndChannel&quot;: 16&#13;&#10;}"/>
+                 textColour="4294951115" Data="{&#13;&#10;  &quot;KeyWidth&quot;: 30,&#13;&#10;  &quot;DisplayOctaveNumber&quot;: true,&#13;&#10;  &quot;LowKey&quot;: 48,&#13;&#10;  &quot;HiKey&quot;: 127,&#13;&#10;  &quot;CustomGraphics&quot;: false,&#13;&#10;  &quot;DefaultAppearance&quot;: false,&#13;&#10;  &quot;BlackKeyRatio&quot;: 0.69999999,&#13;&#10;  &quot;ToggleMode&quot;: false,&#13;&#10;  &quot;MidiChannel&quot;: 1,&#13;&#10;  &quot;UseVectorGraphics&quot;: true,&#13;&#10;  &quot;UseFlatStyle&quot;: false,&#13;&#10;  &quot;MPEKeyboard&quot;: false,&#13;&#10;  &quot;MPEStartChannel&quot;: 2,&#13;&#10;  &quot;MPEEndChannel&quot;: 16&#13;&#10;}"/>
     </Component>
     <Component type="ScriptFloatingTile" id="fltPresets" x="34" y="20" width="700"
                height="400" parentComponent="pnlMain" ContentType="PresetBrowser"

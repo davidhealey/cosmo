@@ -21,12 +21,13 @@
 
 Content.makeFrontInterface(768, 1024);
 
-include("paintRoutines.js");
+include("bankMatrix.js");
 include("filterHandler.js");
 include("envelopeHandler.js");
 
 reg i;
 
+bankMatrix.init();
 envelopeHandler.init();
 filterHandler.init();
 
@@ -52,26 +53,6 @@ inline function sliEQTiltCB(control, value)
     ParametriqEQ1.setAttribute(0*ParametriqEQ1.BandOffset+ParametriqEQ1.Gain, control.get("max")-value);
     ParametriqEQ1.setAttribute(1*ParametriqEQ1.BandOffset+ParametriqEQ1.Gain, value);
 }
-
-const var osc1 = {};
-const var osc2 = {};
-osc1.buttonMatrix = Content.getComponent("pnlOsc1Matrix");
-
-osc1.buttonMatrix.data.numRows = 5;
-osc1.buttonMatrix.data.numColumns = 5;
-osc1.buttonMatrix.setPaintRoutine(paintRoutines.buttonMatrix);
-osc1.buttonMatrix.setMouseCallback(function(event)
-{
-    if(event.clicked)
-    {
-        var columnId = parseInt(event.x / this.getWidth() * this.data.numColumns);
-        var rowId = parseInt(event.y / this.getHeight() * this.data.numRows);
-        var value = 1 + rowId * this.data.numColumns + columnId;
-
-        this.setValue(value-1);
-        this.changed();
-    }
-});
 
 //Keyboard octave shift buttons
 const var fltKeyboard = Content.getComponent("fltKeyboard");
